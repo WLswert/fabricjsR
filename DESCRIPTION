@@ -16,7 +16,7 @@ Authors@R: c(
       )
     )
 Description: Experimental package to see what amazing things we can
-    do when we combine \link{http://fabricjs.com}{fabric.js} with R.
+    do when we combine \href{http://fabricjs.com}{fabric.js} with R.
 Depends:
     R (>= 3.2.2),
     htmlwidgets,
