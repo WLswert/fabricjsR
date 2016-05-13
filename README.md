@@ -1,3 +1,11 @@
+# What Am I Doing Here?
+
+Forked for experiments with `fabric.js` in `R`
+
+See below for original `fabric.js` README, and be sure to check out the real project at [fabricjs.com](http://fabricjs.com/).
+
+<hr/>
+
 ### Fabric
 
 <!-- chat, support -->
