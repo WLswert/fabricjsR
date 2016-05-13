@@ -1,0 +1,26 @@
+Package: fabricjsR
+Title: fabricjs for Use In R
+Version: 0.0.0.9000
+Date: 2016-03-08
+Authors@R: c(
+      person(
+        "Juriy", "Zaytsev"
+        , role = c("aut", "cph")
+        , comment = "fabric.js library in htmlwidgets/lib, http://d3js.org"
+      ),
+      person(
+        "Kent", "Russell"
+        , role = c("aut", "cre")
+        , comment = "R interface"
+        , email = "kent.russell@timelyportfolio.com"
+      )
+    )
+Description: Experimental package to see what amazing things we can
+    do when we combine \link{http://fabricjs.com}{fabric.js} with R.
+Depends:
+    R (>= 3.2.2),
+    htmlwidgets,
+    htmltools
+License: MIT + file LICENSE
+LazyData: true
+RoxygenNote: 5.0.1

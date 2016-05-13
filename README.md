@@ -8,7 +8,7 @@ See below for original `fabric.js` README, and be sure to check out the real pro
 
 # The Original
 
-All credit, praise, glory, and attribution belongs to [Juri Zaytsev (kangax)](https://github.com/kangax).
+All credit, praise, glory, and attribution belongs to [Juriy Zaytsev (kangax)](https://github.com/kangax).
 
 ### Fabric
 
