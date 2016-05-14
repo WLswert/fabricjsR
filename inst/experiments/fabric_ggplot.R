@@ -8,7 +8,7 @@ library(htmltools)
 #  get svg with svglite
 #  convert svg to png
 #  draw on fabric.js canvas
-s <- svgstring()
+s <- svgstring(standalone=FALSE)
 ggplot(data.frame(y=sin(1:10)), aes(x=1:10,y=y)) + geom_smooth()
 s()
 dev.off()
@@ -28,7 +28,7 @@ browsable(
   attachDependencies(
     tagList(
       tags$canvas(id="c", height="500", width="500"),
-      tags$script(sprintf(
+      tags$script(HTML(sprintf(
 "
 var canvas = new fabric.Canvas('c');
 fabric.Image.fromURL(
@@ -40,6 +40,31 @@ fabric.Image.fromURL(
 )
 "       ,
         gg_base64
+      )))
+    ),
+    htmlwidgets:::widget_dependencies("fabric","fabricjsR")[[2]]
+  )
+)
+
+
+
+
+browsable(
+  attachDependencies(
+    tagList(
+      tags$canvas(id="c", height="500", width="500"),
+      tags$script(sprintf(
+"
+var canvas = new fabric.Canvas('c');
+fabric.loadSVGFromURL(
+  %s,
+  function(objects,options){
+    var obj = fabric.util.groupSVGElements(objects, options);
+    canvas.add(obj).renderAll();
+  }
+)
+"       ,
+        shQuote(paste0("data:image/svg+xml,",shiny:::URLencode(s())))
       ))
     ),
     htmlwidgets:::widget_dependencies("fabric","fabricjsR")[[2]]
