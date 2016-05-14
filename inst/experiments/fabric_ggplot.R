@@ -64,7 +64,16 @@ fabric.loadSVGFromURL(
   }
 )
 "       ,
-        shQuote(paste0("data:image/svg+xml,",shiny:::URLencode(s())))
+        shQuote(
+          paste0(
+            "data:image/svg+xml,",
+            shiny:::URLencode(
+              #  gsub out the CDATA and still not right
+              #gsub(x=s(),pattern="(.*)(<!\\[CDATA\\[)(.*)(\\]\\]>)(.*)","\\1\\3\\5")
+              s()
+            )
+          )
+        )
       ))
     ),
     htmlwidgets:::widget_dependencies("fabric","fabricjsR")[[2]]
